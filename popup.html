@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rewards Search Automator</title>
+		<link rel="shortcut icon" href="/logo/bing.png" type="image/x-icon" />
+		<link rel="stylesheet" href="/css/popup.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	</head>
+	<body>
+		<header>
+			<a id="search" class="nav" title="Search options">Search</a>
+			<a id="schedule" class="nav" title="Schedule options">Schedule</a>
+			<a id="settings" class="nav" title="Change Settings">Settings</a>
+		</header>
+		<main>
+			<section class="search">
+				<div class="inputContainer">					<div class="input">
+						<label for="searchDesk">Desktop</label>
+						<input type="number" id="searchDesk" min="0" max="999" />
+					</div>
+					<div class="input">
+						<label for="searchMob">Mobile</label>
+						<input type="number" id="searchMob" min="0" max="999" />
+					</div>
+					<div class="progressBar">
+						<div class="progress"></div>
+					</div>
+				</div>
+				<div class="inputContainer">
+					<div class="input">
+						<label for="searchMin">Min. Delay</label>
+						<input type="number" id="searchMin" min="15" max="30" />
+					</div>
+					<div class="input">
+						<label for="searchMax">Max. Delay</label>
+						<input type="number" id="searchMax" min="30" max="60" />
+					</div>
+				</div>
+				<div id="searchDefault" class="options">
+					<a id="g1" title="0 Mobile and 30 PC points"
+						>0 Mob + 30 PC</a
+					>
+					<a id="g2" title="30 Mobile and 60 PC points"
+						>30 Mob + 60 PC</a
+					>
+					<a id="g3" title="60 Mobile and 90 PC points"
+						>60 Mob + 90 PC</a
+					>
+					<a id="g4" title="90 Mobile and 150 PC points"
+						>90 Mob + 150 PC</a
+					>
+				</div>
+				<button
+					id="searchPerform"
+					class="trigger"
+					title="Perform/Stop Searches"
+					type="button">
+					Search
+				</button>
+			</section>
+			<section class="schedule">
+				<div class="inputContainer">
+					<div class="input">
+						<label for="scheduleDesk">Desktop</label>
+						<input							type="number"
+							id="scheduleDesk"
+							min="0"
+							max="999" />
+					</div>
+					<div class="input">
+						<label for="scheduleMob">Mobile</label>
+						<input
+							type="number"
+							id="scheduleMob"
+							min="0"
+							max="999" />
+					</div>
+					<div class="progressBar">
+						<div class="progress"></div>
+					</div>
+				</div>
+				<div class="inputContainer">
+					<div class="input">
+						<label for="scheduleMin">Min. Delay</label>
+						<input
+							type="number"
+							id="scheduleMin"
+							min="15"
+							max="30" />
+					</div>
+					<div class="input">
+						<label for="scheduleMax">Max. Delay</label>
+						<input
+							type="number"
+							id="scheduleMax"
+							min="30"
+							max="60" />
+					</div>
+				</div>
+				<div id="scheduleDefault" class="options">
+					<a id="m1" title="Schedule won't run automatically"
+						>Manual Only</a
+					>
+					<a
+						id="m2"
+						title="Runs automatically when the browser starts"
+						>At Startup</a
+					>
+					<a
+						id="m3"
+						title="Runs automatically every ~5 minutes (randomized)"
+						>Every ~5 Minutes</a
+					>
+					<a
+						id="m4"
+						title="Runs automatically every ~15 minutes (randomized)"
+						>Every ~15 Minutes</a
+					>
+				</div>
+
+				<button
+					id="schedulePerform"
+					class="trigger"
+					title="Perform/Stop Schedule"
+					type="button">
+					Schedule
+				</button>
+			</section>
+			<section class="settings">
+				<div class="option consent">
+					<label id="deviceName">Test Device Name</label>
+					<a
+						id="resetDevice"
+						title="Reset & Assign new simulation device">
+						<span class="material-symbols-outlined">refresh</span>
+					</a>
+				</div>
+				<div class="option consent">
+					<label for="clear"
+						>Enhanced Patch v1.5.8 for mobile points</label
+					>
+					<input type="checkbox" id="clear" />
+				</div>
+				<div class="option consent">
+					<label for="logs">Show Debug logs in the console</label>
+					<input type="checkbox" id="logs" />
+				</div>
+				<div class="option">
+					<label for="pro">Pro Key</label>
+					<input
+						type="text"
+						id="pro"
+						placeholder="Enter your Pro Key" />
+					<!-- length 35 check -->
+				</div>
+				<div class="option consent pro">
+					<label for="niche">Search Niche</label>
+					<select id="niche">
+						<option value="random" selected>Random</option>
+						<option value="anime">Anime</option>
+						<option value="tech">Tech</option>
+						<option value="travel">Travel</option>
+						<option value="movie">Movie</option>
+						<option value="education">Education</option>
+						<option value="music">music</option>
+					</select>
+				</div>
+				<div class="option consent pro">
+					<label for="autoAct">Auto Activity</label>
+					<input type="checkbox" id="autoAct" />
+				</div>
+				<div class="option consent pro">
+					<label for="activity">Perform Activity</label>
+					<button
+						id="activity"
+						title="Perform Activity"
+						type="button">
+						Perform
+					</button>
+					<div class="progressBar">
+						<div class="progress act"></div>
+					</div>
+				</div>
+				<div class="option consent pro">
+					<label for="clearBing"
+						>Clear Bing Data (Device change)</label
+					>
+					<button
+						id="clearBing"
+						title="Clear Bing data"
+						type="button">
+						Clear
+					</button>
+				</div>
+				<div class="option consent pro">
+					<label for="simulate">Simulate this tab</label>
+					<button
+						id="simulate"
+						title="Enable/ Disable Selected Mobile Device Simulation to this tab"
+						type="button">
+						Toggle
+					</button>
+				</div>
+				<div class="option consent pro">
+					<label for="resetRuntime">Reset Runtime</label>
+					<button
+						id="resetRuntime"
+						title="Reset runtime and clear all data"
+						type="button">
+						Reset
+					</button>
+				</div>
+				<div class="option consent pro">
+					<label for="resetConfig">Reset Extension</label>
+					<button
+						id="resetConfig"
+						title="Reset config and clear all data"
+						type="button">
+						Reset
+					</button>
+				</div>
+				<div class="option consent pro">
+					<label for="history">Bing search history (24Hr)</label>
+					<button
+						id="history"
+						title="View history of all actions"
+						type="button">
+						Download
+					</button>
+				</div>
+				<div class="option consent pro">
+					<label for="deleteHistory"
+						>Search history delete (24Hr)</label
+					>
+					<button
+						id="deleteHistory"
+						title="Delete history of all actions"
+						type="button">
+						Delete
+					</button>
+				</div>
+				<div class="option">
+					<label for="purchase">Purchase/Manage Pro Version</label>
+					<a
+						id="purchase"
+						rel="noopener"
+						href="https://getprojects.gumroad.com/l/rsa"
+						target="_blank"
+						title="Purchase/Manage Pro Version">
+						<span class="material-symbols-outlined">paid</span>
+					</a>
+				</div>
+				<div class="option">
+					<label for="dc">Join Discord Community</label>
+					<a
+						id="dc"
+						rel="noopener"
+						href="https://discord.gg/P6DsfZrCZQ"
+						target="_blank"
+						title="Join Discord">
+						<span class="material-symbols-outlined">groups</span>
+					</a>
+				</div>
+				<div class="option">
+					<label for="tutorial">Access Video Tutorials</label>
+					<a
+						id="tutorial"
+						rel="noopener"
+						href="https://www.youtube.com/@GetProjectsOfficial/search?query=rewards%20search%20automator"
+						target="_blank"
+						title="Access Tutorial">
+						<span class="material-symbols-outlined">book</span>
+					</a>
+				</div>
+				<div class="option">
+					<label for="consent">Privacy & Terms</label>
+					<button
+						id="consent"
+						title="View Privacy & Terms"
+						type="button">
+						Open
+					</button>
+				</div>
+			</section>
+			<div id="consentForm">
+				<h2>
+					By installing and using this extension, you acknowledge and
+					agree to the following:
+				</h2>
+				<ul>
+					<li>
+						This extension assists with Bing searches and Bing
+						Rewards activities **only when manually triggered or
+						scheduled by you**. No automation runs on its own unless
+						explicitly configured.
+					</li>
+					<li>
+						This extension is an independent tool and is **not
+						affiliated, endorsed, or sponsored by Microsoft, Bing,
+						or any of their subsidiaries**.
+					</li>
+					<li>
+						Using automation tools on third-party services **may
+						violate their terms of use**. You alone are responsible
+						for any actions taken using this extension, including
+						any potential account consequences.
+					</li>
+					<li>
+						This extension is intended **for educational or personal
+						productivity purposes only**. Misuse for spamming,
+						abuse, or policy violations is strongly discouraged and
+						not supported.
+					</li>
+					<li>
+						Some pages related to this extension may contain
+						affiliate links. If you choose to purchase through them,
+						it may support future development **at no additional
+						cost to you**.
+					</li>
+					<li>
+						You agree to our latest
+						<a
+							rel="noopener"
+							href="https://getprojects.notion.site/Privacy-Policy-Rewards-Search-Automator-1986977bedc08080a1d2e3a70dcb29e5"
+							target="_blank"
+							title="Privacy Policy page"
+							>Privacy Policy</a
+						>
+						and acknowledge that changes may be communicated via
+						updates or changelogs.
+					</li>
+				</ul>
+				<p>
+					Disclaimer: If you do not agree, please refrain from using
+					the extension.
+				</p>
+				<button
+					id="accept"
+					role="button"
+					type="button"
+					title="Accept the Terms and Policy"
+					class="trigger">
+					Accept & Continue
+				</button>
+			</div>
+		</main>
+		<footer>
+			<a
+				class="promo"
+				rel="noopener"
+				href="https://getprojects.gumroad.com/l/rsa"
+				target="_blank"
+				class="button"
+				title="Purchase Pro Version"
+				>Enhance your experience with Pro
+				<span class="material-symbols-outlined">paid</span>
+			</a>
+			<!-- rate button with 5 stars -->
+			<div class="rating">
+				Leave a rating:
+				<span class="material-symbols-outlined">star</span>
+				<span class="material-symbols-outlined">star</span>
+				<span class="material-symbols-outlined">star</span>
+				<span class="material-symbols-outlined">star</span>
+				<span class="material-symbols-outlined">star</span>
+			</div>		</footer>
+		<script src="/js/devices.js"></script>
+		<script src="/js/jquery.js"></script>
+		<script src="/js/popup.js" type="module"></script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "/logo/128.png",
+         "16": "/logo/16.png",
+         "48": "/logo/48.png"
+      },
+      "default_popup": "/popup.html"
+   },
+   "author": "buildwithkt.dev",   "background": {
+      "service_worker": "/js/service.js",
+      "type": "module"
+   },
+   "description": "Automate daily Bing searches for Microsoft Rewards—realistic, secure, and mobile-supported with device simulation.",
+   "homepage_url": "https://buildwithkt.dev",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "/logo/128.png",
+      "16": "/logo/16.png",
+      "48": "/logo/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhjRs4gDjokKo5JgnmQz3zAEs9yTl5URm0m5du0nnvRePTI6+5TyNIQJAWqMRmLbwUYancf003VO7EoTKUP2EMY/PtHfO/GC2iU5YoYbY3EKuxR8VpvPtc9Y4nT4uZA1ledsKjEZindl6KoOw/kBoRXLsFVXpCdigtk9zDVyKHriX1sqwG2QMpC8XgcPQnBfydQ/DzicnWX5crMpMw8ZtGCDf3+8Ls58cjeMn4LkHmgRikUPEPtyh7IO8j3LGAiB6Atj+vpF11ybI7eFs9x37u0f6XRGO5U2g6y75B5D4rS5HKVlNDaO3QTzlkRVVJpzTvaKWS899YMerMZh2tkzL0QIDAQAB",
+   "manifest_version": 3,
+   "minimum_chrome_version": "102",
+   "name": "Rewards Search Automator",
+   "offline_enabled": false,   "permissions": [ "tabs", "storage", "alarms", "browsingData", "webNavigation", "history", "debugger" ],
+   "short_name": "RSA",
+   "version": "1.5.8"
+}
